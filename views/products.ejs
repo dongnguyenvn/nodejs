@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/productstyle.css">
+    <link href="font/css/all.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+</head>
+<body>
+<div id="container">
+    <div id="products">
+        <% products.map(function (e) { %>
+            <div class="card">
+                <div class="list-product">
+                    <div class="img-block">
+                        <a href="#">
+                            <img class="img-product" src="<%= e.photo%>" alt="">
+                        </a>
+                    </div>
+                    <div class="product-flag">New</div>
+                    <div class="product-decs">
+                        <p><%= e.studio %></p>
+                        <h2><a href="#"><%= e.name %></a></h2>
+                        <div class="rating-product">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="pricing-meta">
+                            <ul>
+                                <li class="old-price"><%= e.oldPrice %></li>
+                                <li class="current-price"><%= e.currentPrice %></li>
+                                <li class="discount-price"><%= e.discountPrice %></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <% })%>
+    </div>
+</div>
+</body>
+</html>
